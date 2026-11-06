@@ -303,7 +303,7 @@
         const body = el('div', { class: 'item-body', oninput: () => { titleNode.textContent = field.title(item) || '未命名'; } },
           field.item.map((sub) => renderField(sub, item, sub.k)));
         const details = el('details', { class: 'item', ontoggle: () => { if (details.open) open.add(item); else open.delete(item); } },
-          el('summary', null, titleNode, el('span', { class: 'item-actions' },
+          el('summary', null, titleNode, el('span', { class: 'edit-tag', 'aria-hidden': 'true' }), el('span', { class: 'item-actions' },
             el('button', { class: 'btn btn-small', type: 'button', 'aria-label': '上移', onclick: move(-1) }, '↑'),
             el('button', { class: 'btn btn-small', type: 'button', 'aria-label': '下移', onclick: move(1) }, '↓'),
             el('button', { class: 'btn btn-small btn-danger', type: 'button', onclick: (event) => {
@@ -326,7 +326,8 @@
       touched();
       draw();
     } }, '＋ ' + field.add);
-    return el('div', { class: 'field' }, field.l ? el('span', { class: 'field-label' }, field.l) : null, box, add);
+    const tip = list.length ? el('span', { class: 'hint', style: 'margin:0 0 10px' }, '點每一列的「✎ 編輯」展開修改；用 ↑ ↓ 調整順序。') : null;
+    return el('div', { class: 'field' }, field.l ? el('span', { class: 'field-label' }, field.l) : null, tip, box, add);
   }
 
   function renderTabs() {
@@ -555,6 +556,11 @@
       const draft = await readDraft();
       if (draft) {
         data = draft;
+        // 舊版後台留下的草稿可能缺少新分頁的資料，從線上內容補齊，避免分頁變成空白
+        try {
+          const online = await loadOnline();
+          Object.keys(online).forEach((key) => { if (!(key in data)) data[key] = online[key]; });
+        } catch (err) { /* 離線時就只用草稿 */ }
         $('draft-banner').hidden = false;
         $('save-state').textContent = '草稿尚未發布';
       } else {

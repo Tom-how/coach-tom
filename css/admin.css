@@ -40,6 +40,14 @@ textarea { resize: vertical; min-height: 120px; }
 .item > summary { display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer; font-weight: 700; }
 .item > summary .item-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .item-actions { display: flex; gap: 4px; flex: none; }
+.item > summary::-webkit-details-marker { display: none; }
+.item > summary:hover { background: #f1f1ef; }
+.edit-tag { flex: none; font-size: 13px; font-weight: 700; color: var(--ink); padding: 4px 10px; border: 1px solid var(--ink); background: #fff; }
+.edit-tag::after { content: "✎ 編輯"; }
+.item[open] > summary { background: var(--ink); color: #fff; }
+.item[open] .edit-tag { background: transparent; border-color: #fff; color: #fff; }
+.item[open] .edit-tag::after { content: "▲ 收合"; }
+.item[open] > summary .btn { background: #fff; }
 .item-body { padding: 14px; border-top: 1px solid var(--line); }
 .image-field { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; }
 .image-field img { width: 120px; height: 120px; object-fit: cover; background: #c7c9c7; border: 1px solid var(--line); }
