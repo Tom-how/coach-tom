@@ -16,30 +16,96 @@
     "image": "assets/tom-cartoon.jpg"
   },
   "specialties": [
-    { "name": "體態調整" },
-    { "name": "肌力體能" },
-    { "name": "動作優化" },
-    { "name": "健力三項" },
-    { "name": "提升運動表現" }
+    {
+      "name": "體態調整"
+    },
+    {
+      "name": "肌力體能"
+    },
+    {
+      "name": "動作優化"
+    },
+    {
+      "name": "健力三項"
+    },
+    {
+      "name": "提升運動表現"
+    }
   ],
   "competitions": [
-    { "year": "2026", "name": "全國青年杯健力錦標賽", "note": "", "result": "" },
-    { "year": "2024", "name": "台灣舉重交流賽", "note": "", "result": "" },
-    { "year": "2024", "name": "秋健身健力三項公開賽", "note": "", "result": "" },
-    { "year": "2023", "name": "全國菁英盃經典健力錦標賽", "note": "", "result": "" }
+    {
+      "year": "2026",
+      "name": "全國青年杯健力錦標賽",
+      "note": "",
+      "result": ""
+    },
+    {
+      "year": "2024",
+      "name": "台灣舉重交流賽",
+      "note": "",
+      "result": ""
+    },
+    {
+      "year": "2024",
+      "name": "秋健身健力三項公開賽",
+      "note": "",
+      "result": ""
+    },
+    {
+      "year": "2023",
+      "name": "全國菁英盃經典健力錦標賽",
+      "note": "",
+      "result": ""
+    }
   ],
   "workshops": [
-    { "year": "2026", "name": "ATP & 日式臥推研習", "org": "" },
-    { "year": "2025", "name": "舉重專項運動防護與科學", "org": "台灣運動傷害防護學會" },
-    { "year": "2025", "name": "基礎動作模式與肌肉動力學", "org": "台灣動作專家協會 FMK" },
-    { "year": "2023", "name": "肌肉解剖與動作整合", "org": "" },
-    { "year": "2023", "name": "地雷管螺旋核心 × 移動表現", "org": "" },
-    { "year": "2021", "name": "健力三項－力量研習", "org": "" }
+    {
+      "year": "2026",
+      "name": "ATP & 日式臥推研習",
+      "org": ""
+    },
+    {
+      "year": "2025",
+      "name": "舉重專項運動防護與科學",
+      "org": "台灣運動傷害防護學會"
+    },
+    {
+      "year": "2025",
+      "name": "基礎動作模式與肌肉動力學",
+      "org": "台灣動作專家協會 FMK"
+    },
+    {
+      "year": "2023",
+      "name": "肌肉解剖與動作整合",
+      "org": ""
+    },
+    {
+      "year": "2023",
+      "name": "地雷管螺旋核心 × 移動表現",
+      "org": ""
+    },
+    {
+      "year": "2021",
+      "name": "健力三項－力量研習",
+      "org": ""
+    }
   ],
   "certs": [
-    { "abbr": "NASM-CPT", "name": "美國國家運動醫學會私人教練", "year": "2022" },
-    { "abbr": "ISCA", "name": "國際 B 級壺鈴教練", "year": "2023" },
-    { "abbr": "ISCA", "name": "國際 C 級健身教練", "year": "2022" }
+    {
+      "abbr": "NASM-CPT",
+      "name": "美國國家運動醫學會私人教練",
+      "year": "2022"
+    },
+    {
+      "abbr": "ISCA",
+      "name": "國際 B 級壺鈴教練",
+      "year": "2023"
+    },
+    {
+      "abbr": "ISCA",
+      "name": "國際 C 級健身教練",
+      "year": "2022"
+    }
   ],
   "highlights": [],
   "studio": {
@@ -51,6 +117,7 @@
   "links": {
     "line": "",
     "instagram": "https://www.instagram.com/pin_hao0502/",
-    "threads": ""
-  }
+    "threads": "https://www.threads.com/@pin_hao0502"
+  },
+  "action": {}
 }
