@@ -1,0 +1,36 @@
+{
+  "site": {
+    "description": "Tom｜私人健身教練、艾勁健身工作室合作教練。從學會控制身體，到真正掌握力量。",
+    "gaId": ""
+  },
+  "hero": {
+    "name": "Tom",
+    "nameEn": "Personal Trainer",
+    "title": "私人健身教練｜艾勁健身工作室合作教練",
+    "tagline": "從學會控制身體，到真正掌握力量。",
+    "photo": "assets/tom-portrait.jpg",
+    "grayscale": true
+  },
+  "highlights": [],
+  "bio": "嗨，我是 Tom，專注於力量與體能訓練。\n依照你的身體狀況與目標規劃訓練，從建立運動習慣、增肌減脂，到追求力量與表現。\n讓身體更強，讓生活更有力量。",
+  "action": {
+    "image": "assets/tom-deadlift.jpg",
+    "caption": ""
+  },
+  "certs": [
+    { "abbr": "NASM-CPT", "name": "美國國家運動醫學會私人教練", "year": "2022" },
+    { "abbr": "ISCA B 級", "name": "國際壺鈴教練", "year": "2023" },
+    { "abbr": "ISCA C 級", "name": "國際健身教練", "year": "2022" }
+  ],
+  "studio": {
+    "name": "艾勁健身工作室",
+    "desc": "台中北屯｜全預約制肌力訓練空間",
+    "url": "https://tom-how.github.io/age-lift-website/",
+    "image": "assets/studio.jpg"
+  },
+  "links": {
+    "line": "https://lin.ee/nlvaXrY",
+    "instagram": "",
+    "threads": ""
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>個人網站後台</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<header class="top">
+  <strong>個人網站後台</strong>
+  <span id="save-state" class="save-state" role="status"></span>
+  <div class="top-actions">
+    <button id="preview-btn" type="button" class="btn">預覽</button>
+    <button id="publish-btn" type="button" class="btn btn-primary">發布到網站</button>
+  </div>
+</header>
+<div id="draft-banner" class="banner" hidden>
+  <span>已載入尚未發布的草稿。</span>
+  <button id="discard-btn" type="button" class="link-btn">捨棄草稿，改用線上版本</button>
+</div>
+<div id="publish-log" class="publish-log" hidden></div>
+<div class="layout">
+  <nav id="tabs" class="tabs" aria-label="後台分頁"></nav>
+  <main id="panel" class="panel"></main>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌力與體能教練｜艾勁健身工作室</title>
+<meta name="description" content="肌力與體能教練，艾勁健身工作室。">
+<meta property="og:title" content="肌力與體能教練｜艾勁健身工作室">
+<meta property="og:image" content="assets/studio.jpg">
+<meta name="theme-color" content="#0e0f10">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a; --bg-2: #17191a; --text: #f2f1ee; --muted: #9a9c9c; --rule: #2c2e2f;
+  --orange: #f5a23a; --line-green: #06c755;
+  --display: "Barlow Condensed", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --sans: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.wrap { width: min(1120px, 100%); margin: 0 auto; padding: 0 24px; }
+[hidden] { display: none !important; }
+
+/* 主視覺：滿版照片 */
+.hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.hero.bw .hero-photo { filter: grayscale(1) contrast(1.15) brightness(.9); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,15,16,.55) 0%, rgba(14,15,16,0) 22%, rgba(14,15,16,.25) 50%, rgba(14,15,16,.96) 100%), linear-gradient(90deg, rgba(14,15,16,.7) 0%, rgba(14,15,16,0) 65%); }
+.hero > .wrap { position: relative; z-index: 1; }
+/* 直式照片：左文字、右照片的分割版面（手機：照片在上、文字在下） */
+.hero.tall::after { display: none; }
+@media (min-width: 721px) {
+  .hero.tall .hero-photo { left: auto; right: 0; width: 46%; object-position: center 25%; }
+  .hero.tall .bar { padding-right: calc(46vw - (100vw - min(1120px, 100vw)) / 2 + 24px); }
+  .hero.tall .hero-copy { padding-right: calc(46vw - (100vw - min(1120px, 100vw)) / 2 + 48px); }
+  .hero.tall h1 { font-size: clamp(56px, 8vw, 128px); }
+}
+@media (max-width: 720px) {
+  .hero.tall .hero-photo { position: relative; height: 62svh; object-position: center 22%; -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); }
+  .hero.tall { min-height: 0; }
+  .hero.tall .bar { position: absolute; top: 0; left: 0; right: 0; z-index: 2; }
+  .hero.tall .bar a { color: #111; }
+  .hero.tall .hero-copy { margin-top: -40px; padding-bottom: 56px; }
+}
+.bar { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; padding-bottom: 22px; font: 700 15px/1 var(--display); letter-spacing: .2em; text-transform: uppercase; }
+.bar a { border-bottom: 2px solid transparent; padding-bottom: 4px; }
+.bar a:hover { border-color: var(--orange); }
+.hero-copy { margin-top: auto; padding-bottom: clamp(48px, 9vh, 96px); }
+.role { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: .12em; font-size: 15px; margin-bottom: 18px; }
+.role { align-items: flex-start; }
+.role::before { content: ""; flex: none; width: 40px; height: 4px; margin-top: .75em; background: var(--orange); }
+h1 { font-size: clamp(56px, 11vw, 144px); font-weight: 900; line-height: 1; letter-spacing: .04em; }
+.name-en { font: 700 clamp(20px, 2.6vw, 30px)/1 var(--display); letter-spacing: .34em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
+.tagline { font-size: clamp(18px, 2.2vw, 24px); font-weight: 700; margin-top: 30px; max-width: 26em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 26px; font-weight: 700; border: 2px solid var(--text); transition: background .15s, color .15s, border-color .15s; }
+.btn-solid { background: var(--orange); border-color: var(--orange); color: #111; }
+.btn-solid:hover { background: var(--text); border-color: var(--text); }
+.btn-line:hover { background: var(--text); color: #111; }
+
+/* 三個數字 */
+.highlights { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.highlights .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+.hl { padding: 44px 0 40px; padding-left: 28px; border-left: 1px solid var(--rule); }
+.hl:first-child { border-left: 0; padding-left: 0; }
+.hl-num { font: 800 clamp(48px, 6.4vw, 84px)/1 var(--display); color: var(--text); }
+.hl-num small { font-size: .5em; color: var(--orange); margin-left: 4px; font-weight: 700; }
+.hl-label { color: var(--muted); margin-top: 10px; font-size: 15px; }
+
+/* 介紹＋證照 */
+.intro { padding: clamp(72px, 12vw, 128px) 0; }
+.bio { font-size: clamp(22px, 3vw, 34px); font-weight: 900; line-height: 1.55; max-width: 22em; white-space: pre-line; }
+.certs { display: flex; flex-wrap: wrap; gap: 28px 48px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--rule); list-style: none; padding-left: 0; margin-bottom: 0; }
+.certs li { display: flex; flex-direction: column; gap: 4px; }
+.cert-abbr { font: 700 clamp(22px, 2.4vw, 28px)/1 var(--display); letter-spacing: .08em; }
+.cert-name { font-size: 13px; color: var(--muted); }
+.label { font: 700 14px/1 var(--display); letter-spacing: .3em; color: var(--orange); margin-bottom: 28px; }
+
+/* 動作大圖 */
+.action { position: relative; margin: 0; height: min(78vh, 760px); overflow: hidden; }
+.action img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; filter: grayscale(1) contrast(1.15) brightness(.9); }
+.action::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg) 0%, rgba(10,10,10,0) 18%, rgba(10,10,10,0) 70%, rgba(10,10,10,.85) 100%); }
+.action figcaption { position: absolute; z-index: 1; left: 0; right: 0; bottom: 28px; font: 700 15px/1.4 var(--display); letter-spacing: .2em; text-transform: uppercase; color: #cfcfcc; }
+.action figcaption:empty { display: none; }
+@media (max-width: 720px) { .action { height: 64svh; } .action img { object-position: 38% 30%; } }
+
+/* 工作室 */
+.studio { position: relative; display: block; min-height: 420px; overflow: hidden; }
+.studio img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.55); transition: transform .6s, filter .6s; }
+.studio:hover img { transform: scale(1.03); filter: grayscale(.3) brightness(.6); }
+.studio .wrap { position: relative; min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end; padding-top: 56px; padding-bottom: 56px; }
+.studio h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.2; }
+.studio p { color: #cfcfcc; margin-top: 8px; }
+.studio .go { margin-top: 24px; font-weight: 700; color: var(--orange); }
+.studio:hover .go { text-decoration: underline; text-underline-offset: 6px; }
+
+/* 頁尾 */
+footer { padding: 56px 0 48px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.social { display: flex; gap: 28px; font: 700 15px/1 var(--display); letter-spacing: .2em; text-transform: uppercase; }
+.social a:hover { color: var(--orange); }
+.copy { color: var(--muted); font-size: 13px; }
+.preview-banner { position: fixed; z-index: 5; left: 50%; bottom: 16px; transform: translateX(-50%); background: var(--orange); color: #111; font-weight: 700; padding: 8px 18px; font-size: 14px; }
+
+@media (max-width: 720px) {
+  .highlights .wrap { grid-template-columns: 1fr; }
+  .hl { border-left: 0; padding: 26px 0; border-top: 1px solid var(--rule); display: flex; align-items: baseline; gap: 18px; }
+  .hl:first-child { border-top: 0; }
+  .hl-label { margin-top: 0; }
+  .actions .btn { flex: 1 1 140px; padding: 0 14px; white-space: nowrap; }
+  .studio, .studio .wrap { min-height: 340px; }
+  .bar .bar-name { display: none; }
+  .bar { justify-content: flex-end; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="hero">
+  <img class="hero-photo" id="hero-photo" alt="">
+  <div class="wrap bar">
+    <span class="bar-name" data-text="hero.name"></span>
+    <a data-href="studio.url" target="_blank" rel="noopener">Studio ↗</a>
+  </div>
+  <div class="wrap hero-copy">
+    <p class="role" data-text="hero.title"></p>
+    <h1 data-text="hero.name"></h1>
+    <p class="name-en" data-text="hero.nameEn"></p>
+    <p class="tagline" data-text="hero.tagline"></p>
+    <div class="actions">
+      <a class="btn btn-solid" data-href="links.line" target="_blank" rel="noopener">LINE 預約諮詢</a>
+      <a class="btn btn-line" data-href="studio.url" target="_blank" rel="noopener">工作室官網</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="highlights" id="highlights"><div class="wrap" id="hl-list"></div></section>
+
+  <section class="intro">
+    <div class="wrap">
+      <p class="label">ABOUT</p>
+      <p class="bio" data-text="bio"></p>
+      <ul class="certs" id="certs"></ul>
+    </div>
+  </section>
+
+  <figure class="action" id="action">
+    <img id="action-img" alt="" loading="lazy">
+    <figcaption class="wrap" id="action-cap"></figcaption>
+  </figure>
+
+  <a class="studio" id="studio" target="_blank" rel="noopener">
+    <img id="studio-img" alt="" loading="lazy">
+    <div class="wrap">
+      <p class="label">MY STUDIO</p>
+      <h2 data-text="studio.name"></h2>
+      <p data-text="studio.desc"></p>
+      <span class="go">前往工作室官網 →</span>
+    </div>
+  </a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="social" aria-label="社群連結">
+      <a data-href="links.line" target="_blank" rel="noopener">LINE</a>
+      <a data-href="links.instagram" target="_blank" rel="noopener">Instagram</a>
+      <a data-href="links.threads" target="_blank" rel="noopener">Threads</a>
+    </nav>
+    <p class="copy">© <span id="year"></span> <span data-text="hero.name"></span></p>
+  </div>
+</footer>
+
+<div class="preview-banner" id="preview-banner" hidden>預覽草稿中，尚未發布</div>
+
+<script>
+(function () {
+  'use strict';
+  const params = new URLSearchParams(location.search);
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+  function readDraft() {
+    return new Promise((resolve) => {
+      let open;
+      try { open = indexedDB.open('profile-admin', 1); } catch (e) { resolve(null); return; }
+      open.onupgradeneeded = () => open.result.createObjectStore('kv');
+      open.onerror = () => resolve(null);
+      open.onsuccess = () => {
+        try {
+          const req = open.result.transaction('kv', 'readonly').objectStore('kv').get('draft');
+          req.onsuccess = () => resolve(req.result || null);
+          req.onerror = () => resolve(null);
+        } catch (e) { resolve(null); }
+      };
+    });
+  }
+
+  async function load() {
+    if (params.has('preview')) {
+      const draft = await readDraft();
+      if (draft) { $('preview-banner').hidden = false; return draft; }
+    }
+    const res = await fetch('content.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('content.json ' + res.status);
+    return res.json();
+  }
+
+  function initAnalytics(data) {
+    const id = String((data.site && data.site.gaId) || '').trim();
+    if (params.has('preview') || !/^G-[A-Z0-9]+$/i.test(id)) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+    const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+    document.head.append(s);
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a || !window.gtag) return;
+      if (a.href.includes('lin.ee') || a.href.includes('line.me')) window.gtag('event', 'line_click');
+      else if (a.href === (data.studio && data.studio.url)) window.gtag('event', 'studio_click');
+    });
+  }
+
+  function render(d) {
+    const get = (path) => path.split('.').reduce((o, k) => (o ? o[k] : ''), d) || '';
+    document.querySelectorAll('[data-text]').forEach((n) => { n.textContent = get(n.dataset.text); });
+    document.querySelectorAll('[data-href]').forEach((n) => { const u = get(n.dataset.href); if (u) n.href = u; else n.hidden = true; });
+
+    const hero = d.hero || {};
+    document.title = [hero.name, hero.title].filter(Boolean).join('｜');
+    const desc = (d.site && d.site.description) || hero.tagline || '';
+    const meta = document.querySelector('meta[name="description"]'); if (meta) meta.content = desc;
+    $('hero').classList.toggle('bw', hero.grayscale !== false);
+    if (hero.photo) {
+      const img = $('hero-photo');
+      img.onload = () => $('hero').classList.toggle('tall', img.naturalHeight > img.naturalWidth);
+      img.src = hero.photo; img.alt = (hero.name || '') + ' 的照片';
+    }
+    else $('hero-photo').hidden = true;
+    $('year').textContent = new Date().getFullYear();
+
+    const hls = (d.highlights || []).filter((h) => String(h.value || '').trim());
+    $('hl-list').replaceChildren(...hls.map((h) => {
+      const box = el('div', 'hl'), num = el('p', 'hl-num', h.value);
+      if (h.unit) num.append(el('small', null, h.unit));
+      box.append(num, el('p', 'hl-label', h.label));
+      return box;
+    }));
+    $('hl-list').style.gridTemplateColumns = hls.length ? `repeat(${hls.length}, 1fr)` : '';
+    $('highlights').hidden = !hls.length;
+
+    const certs = (d.certs || []).filter((c) => c.abbr || c.name);
+    $('certs').replaceChildren(...certs.map((c) => {
+      const li = el('li');
+      if (c.abbr) li.append(el('span', 'cert-abbr', c.abbr));
+      const sub = [c.name, c.year].filter(Boolean).join(' · ');
+      if (sub) li.append(el('span', 'cert-name', sub));
+      return li;
+    }));
+    $('certs').hidden = !certs.length;
+
+    const action = d.action || {};
+    if (action.image) {
+      $('action-img').src = action.image;
+      $('action-img').alt = action.caption || ((hero.name || '') + ' 的訓練照片');
+      $('action-cap').textContent = action.caption || '';
+    } else $('action').hidden = true;
+
+    const studio = d.studio || {};
+    if (studio.url) $('studio').href = studio.url; else $('studio').removeAttribute('href');
+    if (studio.image) { $('studio-img').src = studio.image; $('studio-img').alt = (studio.name || '') + ' 室內空間'; }
+    else $('studio-img').hidden = true;
+  }
+
+  load().then((d) => { render(d); initAnalytics(d); })
+    .catch((err) => { document.body.prepend(el('p', 'preview-banner', '內容載入失敗：' + err.message)); });
+})();
+</script>
+<style>@media (max-width: 720px) { #hl-list { grid-template-columns: 1fr !important; } }</style>
+</body>
+</html>
