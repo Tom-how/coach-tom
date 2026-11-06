@@ -47,39 +47,64 @@
       { k: 'hero.nameEn', l: '英文名', t: 'text', hint: '會自動用大寫字母顯示。' },
       { k: 'hero.title', l: '職稱', t: 'text', hint: '例如：肌力與體能教練' },
       { k: 'hero.tagline', l: '一句話定位', t: 'textarea', rows: 2, hint: '你最想被記住的一句話，越短越好。' },
-      { k: 'hero.photo', l: '主視覺照片', t: 'image', hint: '會滿版顯示，建議用動作照，人物放在畫面中間或右邊。' },
+      { k: 'hero.photo', l: '主視覺照片', t: 'image', hint: '滿版顯示，建議用橫的動作照，人物在畫面中間偏右，左邊留給文字。' },
       { k: 'hero.grayscale', l: '照片轉黑白', t: 'check' }
     ] },
-    { id: 'highlights', label: '亮點數字', desc: '名字下方的數字，建議剛好三個。', fields: [
+    { id: 'about', label: '介紹', desc: '兩三句自我介紹，旁邊放一張卡通圖當裝飾。', fields: [
+      { k: 'bio', l: '自我介紹', t: 'textarea', rows: 4, hint: '換行就是分行。建議兩三句就好。' },
+      { k: 'decor.image', l: '裝飾插畫', t: 'image', hint: '介紹旁邊的斜切框，建議用直式的卡通圖。移除就不顯示。' }
+    ] },
+    { id: 'skills', label: '專長', desc: '會依序編號 01、02、03… 顯示。', fields: [
+      { k: 'specialties', t: 'list', add: '新增專長', title: (i) => i.name || '新專長',
+        blank: () => ({ name: '' }),
+        item: [{ k: 'name', l: '專長', t: 'text', hint: '例如：健力三項' }] }
+    ] },
+    { id: 'comps', label: '比賽經歷', desc: '最新的放最上面。沒有任何一筆時，這個區塊不會顯示。', fields: [
+      { k: 'competitions', t: 'list', add: '新增比賽', prepend: true, title: (i) => [i.year, i.name, i.result].filter(Boolean).join(' ') || '新比賽',
+        blank: () => ({ year: '', name: '', note: '', result: '' }),
+        item: [
+          { k: 'year', l: '年份', t: 'text', hint: '例如：2023' },
+          { k: 'name', l: '比賽名稱', t: 'text', hint: '例如：全國健力錦標賽' },
+          { k: 'note', l: '組別或成績細節（選填）', t: 'text', hint: '例如：男子 74 公斤級｜總和 520 kg' },
+          { k: 'result', l: '名次（選填）', t: 'text', hint: '例如：第 3 名。會用紅色大字顯示在右邊。' }
+        ] }
+    ] },
+    { id: 'certs', label: '證照', desc: '大字顯示完整中文名稱，下方小字顯示英文縮寫和年份。', fields: [
+      { k: 'certs', t: 'list', add: '新增證照', title: (i) => i.name || i.abbr || '新證照',
+        blank: () => ({ name: '', abbr: '', year: '' }),
+        item: [
+          { k: 'name', l: '證照名稱', t: 'text', hint: '例如：國際 B 級壺鈴教練（整個名稱寫在一起）' },
+          { k: 'abbr', l: '發證單位或縮寫（選填）', t: 'text', hint: '例如：ISCA、NASM-CPT' },
+          { k: 'year', l: '取得年份（選填）', t: 'text' }
+        ] }
+    ] },
+    { id: 'works', label: '研習進修', desc: '最新的放最上面。沒有任何一筆時，這個區塊不會顯示。', fields: [
+      { k: 'workshops', t: 'list', add: '新增研習', prepend: true, title: (i) => [i.year, i.name].filter(Boolean).join(' ') || '新研習',
+        blank: () => ({ year: '', name: '', org: '' }),
+        item: [
+          { k: 'year', l: '年份', t: 'text', hint: '例如：2025' },
+          { k: 'name', l: '研習名稱', t: 'text', hint: '例如：舉重專項運動防護與科學' },
+          { k: 'org', l: '主辦單位（選填）', t: 'text', hint: '例如：台灣運動傷害防護學會' }
+        ] }
+    ] },
+    { id: 'highlights', label: '亮點數字', desc: '選填。有填才會在證照上方顯示，建議剛好三個。', fields: [
       { k: 'highlights', t: 'list', add: '新增數字', title: (i) => [i.value, i.unit, i.label].filter(Boolean).join(' ') || '新數字',
         blank: () => ({ value: '', unit: '', label: '' }),
         item: [
           { k: 'value', l: '數字', t: 'text', hint: '例如：8、300、TOP 3' },
-          { k: 'unit', l: '單位（選填）', t: 'text', hint: '例如：年、+。會用橘色小字顯示。' },
+          { k: 'unit', l: '單位（選填）', t: 'text', hint: '例如：年、+。會用紅色小字顯示。' },
           { k: 'label', l: '說明', t: 'text', hint: '例如：教學經驗' }
         ] }
     ] },
-    { id: 'about', label: '介紹與證照', desc: '兩三句自我介紹，加上最重要的幾張證照。', fields: [
-      { k: 'bio', l: '自我介紹', t: 'textarea', rows: 4, hint: '換行就是分行。建議兩三句就好。' },
-      { k: 'action.image', l: '訓練大圖', t: 'image', hint: '介紹下方的滿版照片，建議用橫的動作照，會自動轉黑白。移除圖片就不顯示這一區。' },
-      { k: 'action.caption', l: '大圖說明（選填）', t: 'text', hint: '顯示在照片左下角的小字，例如比賽名稱。' },
-      { k: 'certs', l: '證照', t: 'list', add: '新增證照', title: (i) => i.abbr || i.name || '新證照',
-        blank: () => ({ abbr: '', name: '', year: '' }),
-        item: [
-          { k: 'abbr', l: '證照縮寫', t: 'text', hint: '例如：NASM-CPT，會用大字顯示。' },
-          { k: 'name', l: '中文名稱', t: 'text', hint: '例如：美國國家運動醫學會私人教練' },
-          { k: 'year', l: '取得年份（選填）', t: 'text' }
-        ] }
-    ] },
-    { id: 'studio', label: '工作室', desc: '頁面下方連到工作室官網的大圖。', fields: [
+    { id: 'studio', label: '合作工作室', desc: '頁面下方連到工作室官網的卡片。', fields: [
       { k: 'studio.name', l: '工作室名稱', t: 'text' },
       { k: 'studio.desc', l: '一句說明', t: 'text' },
       { k: 'studio.url', l: '工作室官網連結', t: 'url' },
       { k: 'studio.image', l: '工作室照片', t: 'image' }
     ] },
-    { id: 'links', label: '聯絡連結', desc: '「LINE 預約諮詢」按鈕和頁尾的社群連結。沒填的就不會顯示。', fields: [
-      { k: 'links.line', l: 'LINE 連結', t: 'url' },
-      { k: 'links.instagram', l: 'Instagram 連結', t: 'url' },
+    { id: 'links', label: '聯絡連結', desc: '你個人的聯絡方式，會顯示在第一屏的按鈕和頁尾。沒填的就不會顯示。', fields: [
+      { k: 'links.instagram', l: '個人 Instagram 連結', t: 'url', hint: '第一屏的紅色「Instagram 私訊我」按鈕。' },
+      { k: 'links.line', l: '個人 LINE 連結', t: 'url', hint: '在 LINE「主頁 → 加入好友 → QR 碼」可以複製你的邀請連結。' },
       { k: 'links.threads', l: 'Threads 連結', t: 'url' }
     ] },
     { id: 'site', label: '網站資訊', desc: '分享到 LINE、FB 時顯示的說明，以及流量統計。',

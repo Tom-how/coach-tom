@@ -8,20 +8,40 @@
     "nameEn": "Personal Trainer",
     "title": "私人健身教練｜艾勁健身工作室合作教練",
     "tagline": "從學會控制身體，到真正掌握力量。",
-    "photo": "assets/tom-portrait.jpg",
+    "photo": "assets/tom-deadlift.jpg",
     "grayscale": true
   },
-  "highlights": [],
   "bio": "嗨，我是 Tom，專注於力量與體能訓練。\n依照你的身體狀況與目標規劃訓練，從建立運動習慣、增肌減脂，到追求力量與表現。\n讓身體更強，讓生活更有力量。",
-  "action": {
-    "image": "assets/tom-deadlift.jpg",
-    "caption": ""
+  "decor": {
+    "image": "assets/tom-cartoon.jpg"
   },
+  "specialties": [
+    { "name": "體態調整" },
+    { "name": "肌力體能" },
+    { "name": "動作優化" },
+    { "name": "健力三項" },
+    { "name": "提升運動表現" }
+  ],
+  "competitions": [
+    { "year": "2026", "name": "全國青年杯健力錦標賽", "note": "", "result": "" },
+    { "year": "2024", "name": "台灣舉重交流賽", "note": "", "result": "" },
+    { "year": "2024", "name": "秋健身健力三項公開賽", "note": "", "result": "" },
+    { "year": "2023", "name": "全國菁英盃經典健力錦標賽", "note": "", "result": "" }
+  ],
+  "workshops": [
+    { "year": "2026", "name": "ATP & 日式臥推研習", "org": "" },
+    { "year": "2025", "name": "舉重專項運動防護與科學", "org": "台灣運動傷害防護學會" },
+    { "year": "2025", "name": "基礎動作模式與肌肉動力學", "org": "台灣動作專家協會 FMK" },
+    { "year": "2023", "name": "肌肉解剖與動作整合", "org": "" },
+    { "year": "2023", "name": "地雷管螺旋核心 × 移動表現", "org": "" },
+    { "year": "2021", "name": "健力三項－力量研習", "org": "" }
+  ],
   "certs": [
     { "abbr": "NASM-CPT", "name": "美國國家運動醫學會私人教練", "year": "2022" },
-    { "abbr": "ISCA B 級", "name": "國際壺鈴教練", "year": "2023" },
-    { "abbr": "ISCA C 級", "name": "國際健身教練", "year": "2022" }
+    { "abbr": "ISCA", "name": "國際 B 級壺鈴教練", "year": "2023" },
+    { "abbr": "ISCA", "name": "國際 C 級健身教練", "year": "2022" }
   ],
+  "highlights": [],
   "studio": {
     "name": "艾勁健身工作室",
     "desc": "台中北屯｜全預約制肌力訓練空間",
@@ -29,8 +49,8 @@
     "image": "assets/studio.jpg"
   },
   "links": {
-    "line": "https://lin.ee/nlvaXrY",
-    "instagram": "",
+    "line": "",
+    "instagram": "https://www.instagram.com/pin_hao0502/",
     "threads": ""
   }
 }
