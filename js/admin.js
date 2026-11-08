@@ -46,6 +46,7 @@
       { k: 'hero.name', l: '姓名', t: 'text' },
       { k: 'hero.nameEn', l: '英文名', t: 'text', hint: '會自動用大寫字母顯示。' },
       { k: 'hero.title', l: '職稱', t: 'text', hint: '例如：肌力與體能教練' },
+      { k: 'hero.area', l: '上課地區', t: 'text', hint: '顯示在職稱下方，前面會自動加上定位圖示。例如：台中北屯｜太平。清空就不顯示。' },
       { k: 'hero.tagline', l: '一句話定位', t: 'textarea', rows: 2, hint: '你最想被記住的一句話，越短越好。' },
       { k: 'hero.photo', l: '主視覺照片', t: 'image', hint: '滿版顯示，建議用橫的動作照，人物在畫面中間偏右，左邊留給文字。' },
       { k: 'hero.grayscale', l: '照片轉黑白', t: 'check' }
@@ -570,6 +571,9 @@
       $('panel').replaceChildren(el('p', { class: 'status err' }, '內容載入失敗：' + err.message));
       return;
     }
+    // 線上內容還沒有「上課地區」時先填預設值，發布後網站就會顯示
+    data.hero = data.hero || {};
+    if (!('area' in data.hero)) data.hero.area = '台中北屯｜太平';
     renderTabs();
     renderPanel();
     $('publish-btn').addEventListener('click', publish);

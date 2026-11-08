@@ -71,6 +71,8 @@ h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; line-height: 1.25; l
 h1 { font: 900 clamp(96px, 13vw, 184px)/.84 var(--display); letter-spacing: -.035em; text-transform: uppercase; margin-top: 26px; }
 .rule { width: 64px; height: 4px; background: var(--ink); margin-top: 30px; }
 .role { margin-top: 26px; font-weight: 500; color: var(--muted); font-size: 15px; }
+.area { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--iron); }
+.area svg { width: 15px; height: 15px; flex: none; }
 .tagline { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.45; margin-top: 10px; max-width: 16em; text-wrap: balance; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 .hero-figure { position: relative; }
@@ -226,6 +228,7 @@ footer img { height: 130px; width: auto; }
         </div>
         <div>
         <p class="role" data-text="hero.title"></p>
+        <p class="area" id="area"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span data-text="hero.area"></span></p>
         <p class="tagline" data-text="hero.tagline"></p>
         <div class="actions">
           <a class="btn btn-dark" data-href="links.instagram" target="_blank" rel="noopener">Instagram 私訊我 <span class="arrow">→</span></a>
@@ -381,6 +384,7 @@ footer img { height: 130px; width: auto; }
     $('hero-figure').classList.toggle('bw', hero.grayscale !== false);
     if (hero.photo) { $('hero-photo').src = hero.photo; $('hero-photo').alt = (hero.name || '') + ' 的訓練照片'; }
     else $('hero-figure').hidden = true;
+    $('area').hidden = !String(hero.area || '').trim();
     $('year').textContent = new Date().getFullYear();
 
     const decor = (d.decor && d.decor.image) || '';
